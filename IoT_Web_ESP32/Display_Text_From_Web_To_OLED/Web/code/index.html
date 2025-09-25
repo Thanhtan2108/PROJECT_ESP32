@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị chuỗi ký tự lên OLED 0.96 inch</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Hiển thị nội dung lên OLED từ xa</h1>
+    </header>
+
+    <!-- Tạo Switch -->
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="toggle-switch">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li>
+                <a href="https://github.com/Thanhtan2108" target="_blank">
+                <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main area: content + sidebar -->
+    <main>
+        <section class="content">
+
+            <!-- 1) Khối chứa ô nhập liệu (text input) -->
+            <div id="input-block">
+                <label for="text-input">Nhập chuỗi:</label>
+                <input id="text-input" type="text" name="text" placeholder="Nhập chuỗi vào đây">
+            </div>
+
+            <div id="btn-block">
+                <button type="button" id="clear-btn">Xóa</button>
+                <button type="button" id="ok-btn">OK</button>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Firebase SDK Legacy (v9.23.0) - Hỗ trợ global script -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
