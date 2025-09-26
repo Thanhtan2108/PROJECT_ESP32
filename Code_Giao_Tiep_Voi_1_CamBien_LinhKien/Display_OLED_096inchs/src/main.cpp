@@ -7,6 +7,7 @@
 //==================CONFIG OLED 0.96 INCH===================
 #define SCREEN_WIDTH 128  // Chiều rộng màn hình (pixels)
 #define SCREEN_HEIGHT 64  // Chiều cao màn hình (pixels)
+#define OLED_ADDR    0x3C // Địa chỉ của màn OLED 0.96 inch
 
 // Khởi tạo OLED với I2C (SDA=21, SCL=22 mặc định, địa chỉ 0x3C)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
@@ -18,7 +19,7 @@ void setup() {
   Wire.begin(21, 22);  // Nếu dùng chân khác, thay đổi ở đây
 
   // Kiểm tra kết nối OLED
-  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {  // Địa chỉ 0x3C cho 128x64
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {  // Địa chỉ 0x3C cho 128x64
     Serial.println(F("Lỗi khởi tạo SSD1306! Kiểm tra kết nối."));
     for (;;);  // Dừng chương trình nếu lỗi
   }
@@ -34,7 +35,7 @@ void setup() {
   display.setCursor(0, 10);    // Vị trí bắt đầu (x=0, y=10)
 
   // Hiển thị text
-  display.println("Hello, world!");
+  display.println("Hello, world");
   display.display();  // Cập nhật màn hình
 
   Serial.println("Hiển thị text trên OLED!");
